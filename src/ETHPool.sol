@@ -117,7 +117,7 @@ contract ETHPool {
                 (bool success, ) = payable(user).call{value: amount}("");
                 require(success, "ETH transfer failed");
             }
-
+            hasVotedForUnstake[user] = false;
             deposits[user] = 0;
         }
 
